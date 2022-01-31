@@ -28,6 +28,7 @@
 #     idx +=1
 # print("End")
 
+
 # x = "Hello"
 # for item in x:
 #     print(item)
@@ -36,4 +37,5 @@
 # for idx in r:
 #     print(x[idx])
 # print("End")
+
 
