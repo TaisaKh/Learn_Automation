@@ -32,10 +32,10 @@
 # x = "Hello"
 # for item in x:
 #     print(item)
-#
+
 # r = range(0, len(x))
 # for idx in r:
 #     print(x[idx])
-print("End")
+#print("End")
 
 
