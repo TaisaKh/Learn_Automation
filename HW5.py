@@ -48,21 +48,100 @@ TASK 4
 """
 
 
+def showEmployee(name, salary):
+    default_salary = 9000
+    if salary is None:
+        return name, default_salary
+    else:
+        return name, salary
 
+
+showEmployee(random_string(), random_number()*1000)
 
 
 """
+TASK 5
+Дано натуральное число N. Вычислите сумму его цифр. Напишите рекурсивную функцию
+"""
 
-5. Дано натуральное число N. Вычислите сумму его цифр. Напишите рекурсивную функцию
 
-6. Напишите рекурсивную функцию для вычисления числа Фибоначи
+def recursive_sum(N):
+    if N <= 1:
+        return N
+    return N + recursive_sum(N - 1)
 
-7. Напишите функцию для умножения всех чисел в списке. Рекурсивно
 
-8. Дано натуральное число N. Выведите слово YES, если число N является точной степенью двойки, или слово NO в противном случае. 8 - YES, 3 - NO
+recursive_sum(random_number())
 
-9. Создайте inner функцию для вычисления сложения следующим образом:
+
+"""
+TASK 6
+Напишите рекурсивную функцию для вычисления числа Фибоначи
+"""
+
+
+def recursive_Fibonacci(n):
+    if n < 3:
+        return 1
+    return recursive_Fibonacci(n - 1) + recursive_Fibonacci(n - 2)
+
+
+recursive_Fibonacci(random_number())
+
+
+"""
+TASK 7
+Напишите функцию для умножения всех чисел в списке. Рекурсивно
+"""
+
+
+def recursive_multiply_list(n, mult):
+    if len(n) >= 1:
+        mult = mult * n[0]
+        recursive_multiply_list(n[1:], mult)
+    else:
+        return mult
+
+
+recursive_multiply_list(random_number_list(), mult=1)
+
+
+"""
+TASK 8
+Дано натуральное число N. Выведите слово YES, если число N является точной степенью двойки, или слово NO в противном случае. 8 - YES, 3 - NO
+"""
+
+
+def is_number_exact_power_of_two(N):
+    print(f"{N} is_number_exact_power_of_two")
+    if (N == 0):
+        print("NO")
+        return False
+    while (N != 1):
+        if (N % 2 != 0):
+            print("NO")
+            return False
+        N = N // 2
+    print("YES")
+
+
+is_number_exact_power_of_two(random_number()*random_number())
+
+
+"""
+TASK 9
+Создайте inner функцию для вычисления сложения следующим образом:
 Создайте внешнюю функцию, которая будет принимать два параметра, a и b
 Создайте внутреннюю функцию внутри внешней функции, которая будет вычислять сложение a и b
 Наконец, внешняя функция добавит 5 и вернет ее.
 """
+
+
+def outer(a, b):
+    def inner():
+        add = a + b
+        return add
+    return inner() + 5
+
+
+outer(random_number(), random_number())
